@@ -52,10 +52,10 @@ for s in subjects:
         os.makedirs(os.path.join(DEST_DIR, s))
     for r in subjects[s]:
         # Make run directory
-        if not os.path.exists(os.path.join(DEST_DIR, s, map_run_number(r))):
-            os.makedirs(os.path.join(DEST_DIR, s, map_run_number(r)))
+        if not os.path.exists(os.path.join(DEST_DIR, s, 'bold', map_run_number(r))):
+            os.makedirs(os.path.join(DEST_DIR, s, 'bold', map_run_number(r)))
         # Write out file
-        with open(os.path.join(DEST_DIR, s, map_run_number(r), 'selfrel.par'), 'w') as f:
+        with open(os.path.join(DEST_DIR, s, 'bold', map_run_number(r), 'selfrel.par'), 'w') as f:
             for line in subjects[s][r]:
                 split = line.split(',')
                 f.write(','.join(split[2:]))
